@@ -37,7 +37,7 @@ public class Main extends Application {
         Scene scene = new Scene(grid, 300, 275);
         primaryStage.setScene(scene);
 
-        Text sceneTitle = new Text("Welcome");
+        Text sceneTitle = new Text("Simple Budgeting");
         sceneTitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
         grid.add(sceneTitle, 0, 0, 2, 1);
 
@@ -90,7 +90,8 @@ public class Main extends Application {
         Scene scene = mainLanding.getScene();
 
         // sets up the title of the landing page and sets the scene
-        primaryStage.setTitle("Welcome to your homepage!");
+        primaryStage.setTitle(userName + "'s Expense Page");
+        primaryStage.setResizable(false);
         primaryStage.setScene(scene);
     }
 
