@@ -67,13 +67,13 @@ public class Main extends Application {
                 String user;
 
                 // checks to make sure that credentials aren't empty -- will add check for validity later
-                if(userTextField.getText().toString().length() == 0 || pwBox.getText().length() == 0){
+                if(userTextField.getText().length() == 0 || pwBox.getText().length() == 0){
                     JOptionPane.showMessageDialog(null, "Invalid Credentials");
                     return;
                 }
                 else{
                     // grabs the current username to pass into the scene switch function
-                    user = userTextField.getText().toString();
+                    user = userTextField.getText();
                 }
                 changeScenes(user);
             }
