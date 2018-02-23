@@ -91,6 +91,7 @@ public class Main extends Application {
 
         // sets up the title of the landing page and sets the scene
         primaryStage.setTitle("Welcome to your homepage!");
+        primaryStage.setResizable(false);
         primaryStage.setScene(scene);
     }
 

@@ -5,9 +5,21 @@
     -fx-border-radius: 5px;
     -fx-background-color: #c0c1c4;
 }
-
+.table-grid {
+    -fx-border-style: solid;
+        -fx-border-color: black;
+        -fx-border-width: 2px;
+        -fx-border-radius: 5px;
+        -fx-background-color: blue;
+}
+.name-header {
+    -fx-border-style: solid;
+    -fx-border-color: black;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+    -fx-background-image: url("/resources/background.png");
+}
 #pane{
-    -fx-background-color: blue;
 }
 
 #tableProperties{
@@ -15,7 +27,6 @@
 }
 
 #header{
-    -fx-background-color: red;
     -fx-background-size: cover;
 }
 

@@ -11,6 +11,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.geometry.Insets;
+import javafx.scene.layout.RowConstraints;
+import javafx.scene.text.Font;
 
 
 public class Landing {
@@ -22,10 +24,17 @@ public class Landing {
     public Scene getScene()
     {
         // TODO: 2/20/2018 Redesign this landing page
-        GridPane grid = new GridPane();
 
-        //Label welcomeLabel = new Label("Welcome, " + getUserFirstName() + "!");
-        //welcomeLabel.setFont(new Font("Cambria", 15));
+        GridPane headerGrid = new GridPane();
+        headerGrid.setAlignment(Pos.CENTER);
+
+        Label welcomeLabel = new Label("Welcome, " + getUserFirstName() + "!");
+        welcomeLabel.setFont(new Font("Cambria", 15));
+        headerGrid.getStyleClass().add("name-header");
+        headerGrid.add(welcomeLabel, 0, 0);
+        headerGrid.setPrefHeight(150);
+
+        GridPane grid = new GridPane();
 
         Button addButton = new Button();
         Button deleteButton = new Button();
@@ -33,17 +42,18 @@ public class Landing {
         addButton.setText("Add");
         deleteButton.setText("Delete");
 
-        grid.setAlignment(Pos.TOP_CENTER);
+        grid.setAlignment(Pos.BOTTOM_CENTER);
         grid.setHgap(90);
         grid.setPadding(new Insets(10, 0, 10, 0));
-        grid.setId("header");
+        grid.setPrefHeight(20);
+        //grid.setId("header");
         grid.add(addButton, 0, 0);
         grid.add(deleteButton, 1, 0);
-        grid.getStyleClass().add("header-grid");
+        //grid.getStyleClass().add("header-grid");
 
         GridPane contentGrid = new GridPane();
         contentGrid.setId("header");
-
+        contentGrid.getStyleClass().add("table-grid");
         // allows table to stretch across window
         ColumnConstraints colConstraints = new ColumnConstraints();
         colConstraints.setPercentWidth(100);
@@ -75,12 +85,13 @@ public class Landing {
         // this will segment our different nodes throughout the application
         BorderPane pane = new BorderPane();
         pane.setId("pane");
-        pane.setTop(grid);
-        pane.setCenter(contentGrid);
+        pane.setTop(headerGrid);
+        pane.setCenter(grid);
+        pane.setBottom(contentGrid);
 
 
         // sets scene and applies stylesheet
-        Scene scene = new Scene(pane,600,450);
+        Scene scene = new Scene(pane,800,600);
         scene.getStylesheets().add("Style.css");
 
         return scene;
